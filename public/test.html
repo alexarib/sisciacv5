@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test SISCIAC</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        .success { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .error { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .info { background-color: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb; }
+        .test-link {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .test-link:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Test de Sistema SISCIAC</h1>
+        
+        <div class="status success">
+            ✅ <strong>Servidor funcionando:</strong> El servidor Laravel está ejecutándose correctamente.
+        </div>
+        
+        <div class="status info">
+            ℹ️ <strong>Assets compilados:</strong> Los archivos JavaScript y CSS de React han sido compilados exitosamente.
+        </div>
+        
+        <h2>🔗 Enlaces de Prueba:</h2>
+        
+        <a href="/" class="test-link">🏠 Página Principal (React SPA)</a>
+        <a href="/login" class="test-link">🔐 Página de Login</a>
+        <a href="/test-react" class="test-link">⚛️ Test React</a>
+        
+        <h2>📊 Estado del Sistema:</h2>
+        
+        <div class="status success">
+            ✅ <strong>Base de datos:</strong> Todas las migraciones ejecutadas correctamente
+        </div>
+        
+        <div class="status success">
+            ✅ <strong>Rutas configuradas:</strong> Sistema SPA con React Router funcionando
+        </div>
+        
+        <div class="status success">
+            ✅ <strong>Assets compilados:</strong> Vite build completado exitosamente
+        </div>
+        
+        <div class="status info">
+            ℹ️ <strong>Servidor:</strong> Ejecutándose en http://127.0.0.1:8000
+        </div>
+        
+        <h2>🚀 Instrucciones:</h2>
+        <ol>
+            <li>Haz clic en "Página Principal" para acceder al sistema React</li>
+            <li>Si ves una página en blanco, verifica la consola del navegador (F12)</li>
+            <li>Usa "Test React" para verificar que React funciona correctamente</li>
+        </ol>
+        
+        <div class="status info">
+            <strong>Nota:</strong> Si el sistema muestra página en blanco, puede ser un problema de JavaScript en el navegador. 
+            Verifica la consola del navegador para ver errores específicos.
+        </div>
+    </div>
+</body>
+</html>

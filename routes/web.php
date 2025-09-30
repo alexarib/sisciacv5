@@ -1,0 +1,23 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+
+// Página principal del sistema
+Route::get('/', function () {
+    return view('welcome');
+});
+
+// Página de inicio
+Route::get('/home', function () {
+    return view('welcome');
+});
+
+// Login
+Route::get('/login', function () {
+    return view('welcome');
+});
+
+// SPA Routes - All routes return the main view for React Router
+Route::get('/{any}', function () {
+    return view('welcome');
+})->where('any', '^(?!api|_vite|storage|favicon\.ico).*');
