@@ -1,66 +1,287 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# SISCIAC v2.0.1 - Sistema de Información de Cultivos y Asistencia Comunitaria
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## 🌱 Descripción
 
-## About Laravel
+SISCIAC es una plataforma integral para el control y gestión de procesos agrícolas, diseñada para conectar productores, comunidades y gobierno en una agricultura sostenible.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+**Versión 2.0.1 sin mapa** - Sistema completamente funcional con todas las características implementadas excepto el mapa interactivo.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## ✨ Características Implementadas
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- ✅ **Sistema de Autenticación Completo** (Login/Register)
+- ✅ **Dashboard Administrativo y de Productor**
+- ✅ **Gestión de Cultivos y Productores**
+- ✅ **Sistema de Logística y Rutas**
+- ✅ **Gestión de Insumos y Solicitudes**
+- ✅ **Sistema de Alertas y Notificaciones**
+- ✅ **Formación Técnica y RRHH**
+- ✅ **Análisis Geográfico y Estadísticas**
+- ✅ **Comercialización y Precios de Mercado**
+- ✅ **Sistema de Reportes y Transacciones**
 
-## Learning Laravel
+## 🛠️ Tecnologías Utilizadas
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- **Backend**: Laravel 11 (PHP 8.3)
+- **Frontend**: React 18 + Vite
+- **Base de Datos**: PostgreSQL 14
+- **Estilos**: Tailwind CSS
+- **Gráficos**: Recharts
+- **Autenticación**: Laravel Sanctum (configurado)
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## 🚀 Instalación Rápida
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Requisitos Previos
+- PHP 8.3+
+- Composer
+- Node.js 18+
+- PostgreSQL 14+
+- Laragon (recomendado para Windows)
 
-## Laravel Sponsors
+### Pasos de Instalación
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+1. **Clonar el repositorio**
+   ```bash
+   git clone https://github.com/tu-usuario/sisciac-v2.0.1.git
+   cd sisciac-v2.0.1
+   ```
 
-### Premium Partners
+2. **Instalar dependencias**
+   ```bash
+   composer install
+   npm install
+   ```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+3. **Configurar entorno**
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
 
-## Contributing
+4. **Configurar PostgreSQL**
+   - Crear base de datos: `sisciac_v1`
+   - Usuario: `postgres`
+   - Contraseña: `jw6Y9dSFmXV.`
+   - Actualizar `.env` con estas credenciales
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+5. **Ejecutar migraciones y seeders**
+   ```bash
+   php artisan migrate
+   php artisan db:seed --class=UserSeeder
+   ```
 
-## Code of Conduct
+6. **Compilar assets**
+   ```bash
+   npm run build
+   ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+7. **Iniciar servidor**
+   ```bash
+   php artisan serve
+   ```
 
-## Security Vulnerabilities
+## 🔑 Credenciales de Acceso
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### Administrador
+- **Usuario**: `admin`
+- **Contraseña**: `admin123`
+- **Email**: `admin@sciac.gov.ve`
 
-## License
+### Productores de Prueba
+- **Usuario**: `juan.perez`
+- **Contraseña**: `password123`
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- **Usuario**: `maria.lopez`
+- **Contraseña**: `password123`
+
+## 🌐 Acceso al Sistema
+
+- **URL Principal**: http://localhost:8000
+- **API Endpoints**: http://localhost:8000/api
+- **Dashboard Admin**: http://localhost:8000/admin
+- **Dashboard Productor**: http://localhost:8000/producer
+
+## 📊 Características del Sistema
+
+### Dashboard Administrativo
+- Estadísticas generales del sistema
+- Gestión de productores y cultivos
+- Control de logística y rutas
+- Gestión de insumos y solicitudes
+- Sistema de alertas y notificaciones
+- Reportes y análisis
+
+### Dashboard de Productor
+- Vista personalizada para productores
+- Gestión de cultivos propios
+- Seguimiento de logística
+- Acceso a formación técnica
+- Gestión de perfil
+
+### API REST Completa
+- Autenticación con tokens
+- CRUD completo para todas las entidades
+- Endpoints de estadísticas
+- Sistema de búsqueda
+- Análisis geográfico
+
+## 🗄️ Base de Datos
+
+### Tablas Principales
+- `users` - Usuarios del sistema
+- `producers` - Productores agrícolas
+- `crops` - Cultivos
+- `logistics` - Logística y transporte
+- `supplies` - Insumos agrícolas
+- `trainings` - Formación técnica
+- `alerts` - Sistema de alertas
+- `reports` - Reportes y estadísticas
+
+### Migraciones Incluidas
+- ✅ 23 migraciones ejecutadas
+- ✅ Seeders con datos de prueba
+- ✅ Índices optimizados
+- ✅ Relaciones configuradas
+
+## 🔧 Configuración del Entorno
+
+### Variables de Entorno (.env)
+```env
+APP_NAME=SISCIAC
+APP_ENV=local
+APP_DEBUG=true
+APP_URL=http://localhost:8000
+
+DB_CONNECTION=pgsql
+DB_HOST=127.0.0.1
+DB_PORT=5432
+DB_DATABASE=sisciac_v1
+DB_USERNAME=postgres
+DB_PASSWORD=jw6Y9dSFmXV.
+
+SESSION_DRIVER=file
+CACHE_STORE=file
+LOG_LEVEL=error
+```
+
+## 📁 Estructura del Proyecto
+
+```
+sisciac-v2.0.1/
+├── app/
+│   ├── Http/Controllers/     # Controladores API
+│   ├── Models/              # Modelos Eloquent
+│   └── Providers/           # Service Providers
+├── database/
+│   ├── migrations/          # Migraciones de BD
+│   └── seeders/            # Seeders con datos
+├── resources/
+│   ├── js/                 # Componentes React
+│   │   ├── components/     # Componentes reutilizables
+│   │   ├── pages/          # Páginas principales
+│   │   └── contexts/       # Contextos React
+│   └── views/              # Vistas Blade
+├── routes/
+│   ├── api.php             # Rutas API
+│   └── web.php             # Rutas web
+└── public/                 # Assets públicos
+```
+
+## 🧪 Testing
+
+### Probar el Sistema
+1. Acceder a http://localhost:8000
+2. Iniciar sesión con `admin` / `admin123`
+3. Explorar el dashboard administrativo
+4. Probar las diferentes funcionalidades
+
+### Probar API
+```bash
+# Login
+curl -X POST http://localhost:8000/api/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{"username":"admin","password":"admin123"}'
+
+# Dashboard stats
+curl -X GET http://localhost:8000/api/dashboard/stats \
+  -H "Authorization: Bearer YOUR_TOKEN"
+```
+
+## 🐛 Resolución de Problemas
+
+### Error de Conexión PostgreSQL
+```bash
+# Verificar que PostgreSQL esté ejecutándose
+netstat -an | findstr :5432
+
+# Probar conexión
+php artisan migrate:status
+```
+
+### Error de Assets
+```bash
+# Recompilar assets
+npm run build
+```
+
+### Error de Permisos
+```bash
+# Configurar permisos de storage
+php artisan storage:link
+```
+
+## 📈 Estado del Proyecto
+
+### ✅ Completado
+- [x] Sistema de autenticación
+- [x] Dashboard administrativo
+- [x] Dashboard de productor
+- [x] Gestión de cultivos
+- [x] Gestión de productores
+- [x] Sistema de logística
+- [x] Gestión de insumos
+- [x] Sistema de alertas
+- [x] Formación técnica
+- [x] Análisis geográfico
+- [x] Comercialización
+- [x] Sistema de reportes
+- [x] API REST completa
+- [x] Base de datos PostgreSQL
+- [x] Documentación completa
+
+### ⚠️ Excluido en esta Versión
+- [ ] Mapa interactivo (Leaflet)
+- [ ] Visualización geográfica en tiempo real
+
+## 🔄 Changelog
+
+### v2.0.1 (2025-09-29) - Versión Estable Sin Mapa
+- ✅ Sistema completamente funcional
+- ✅ PostgreSQL configurado y funcionando
+- ✅ Todos los errores JavaScript resueltos
+- ✅ Autenticación implementada
+- ✅ Dashboard completo
+- ✅ API REST funcional
+- ✅ Base de datos migrada
+- ✅ Documentación actualizada
+- ⚠️ Mapa interactivo excluido
+
+### v2.0.0 (2025-08-18) - Versión Inicial
+- 🎉 Versión inicial del sistema
+- 🗺️ Mapa interactivo implementado
+- 📊 Dashboard básico
+- 👥 Gestión de usuarios
+
+## 📞 Soporte
+
+- **Desarrollador**: Alex C - SISCIAC Developer
+- **Email**: alexc@sisciac.com
+- **Proyecto**: SISCIAC v2.0.1
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
+
+---
+
+**SISCIAC v2.0.1** - Sistema de Información de Cultivos y Asistencia Comunitaria  
+*Versión estable sin mapa interactivo - Lista para producción*
