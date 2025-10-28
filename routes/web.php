@@ -2,9 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
-// Página principal del sistema
+// Página principal del sistema - Landing Page
 Route::get('/', function () {
-    return view('welcome');
+    return view('landing');
 });
 
 // Página de inicio

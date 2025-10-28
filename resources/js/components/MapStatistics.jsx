@@ -54,7 +54,7 @@ const MapStatistics = ({ selectedLayer = 'all' }) => {
                 producers: {
                     total: producers.length,
                     active: producers.filter(p => p.status === 'active').length,
-                    area: producers.reduce((sum, p) => sum + (p.area_total || 0), 0)
+                    area: producers.reduce((sum, p) => sum + (p.total_area || 0), 0)
                 },
                 crops: {
                     total: crops.length,
