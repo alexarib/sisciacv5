@@ -24,10 +24,13 @@ import {
 } from 'lucide-react';
 import InteractiveMap from '../components/InteractiveMap';
 import FullWidthMap from '../components/FullWidthMap';
+import EnhancedFullWidthMap from '../components/EnhancedFullWidthMap';
+import EnhancedLocationForm from '../components/EnhancedLocationForm';
 import MapNavigation from '../components/MapNavigation';
 import MapToolbar from '../components/MapToolbar';
 import LayerControl from '../components/LayerControl';
 import DrawingTools from '../components/DrawingTools';
+import EnhancedDrawingTools from '../components/EnhancedDrawingTools';
 import AnalysisPanel from '../components/AnalysisPanel';
 import MapStatistics from '../components/MapStatistics';
 import MapElementForm from '../components/MapElementForm';
@@ -632,24 +635,26 @@ const MapPage = () => {
                   )}
                 </div>
 
-                {/* Right Side - Drawing Tools or Empty Space */}
-                <div className="lg:col-span-3">
-                  {(activeModule === 'drawing' || showDrawingTools) && (
-                    <DrawingTools
-                      drawingMode={drawingMode}
-                      onDrawingModeChange={handleDrawingModeChange}
-                      onClearDrawing={handleClearDrawing}
-                      onSaveDrawing={handleSaveDrawing}
-                      onCancelDrawing={handleCancelDrawing}
-                      isDrawing={isDrawing}
-                      drawingData={drawingData}
-                      onEditMode={handleEditMode}
-                      onDeleteElement={handleElementDelete}
-                      onDuplicateElement={handleElementDuplicate}
-                      onMoveElement={handleElementMove}
-                    />
-                  )}
-                </div>
+                     {/* Right Side - Drawing Tools or Empty Space */}
+                     <div className="lg:col-span-3">
+                       {(activeModule === 'drawing' || showDrawingTools) && (
+                         <EnhancedDrawingTools
+                           drawingMode={drawingMode}
+                           onDrawingModeChange={handleDrawingModeChange}
+                           onClearDrawing={handleClearDrawing}
+                           onSaveDrawing={handleSaveDrawing}
+                           onCancelDrawing={handleCancelDrawing}
+                           isDrawing={isDrawing}
+                           drawingData={drawingData}
+                           onEditMode={handleEditMode}
+                           onDeleteElement={handleElementDelete}
+                           onDuplicateElement={handleElementDuplicate}
+                           onMoveElement={handleElementMove}
+                           onElementSelect={handleElementSelect}
+                           selectedElement={selectedElement}
+                         />
+                       )}
+                     </div>
               </div>
             </section>
 
@@ -666,36 +671,45 @@ const MapPage = () => {
                   </p>
                 </div>
 
-                <div className="p-4">
-                  <FullWidthMap
-                    selectedLayer={selectedLayer}
-                    onMarkerClick={handleMarkerClick}
-                    mode={mode}
-                    onMapClick={handleMapClick}
-                    drawingMode={drawingMode}
-                    onDrawingComplete={handleDrawingComplete}
-                    onMeasureComplete={handleMeasureComplete}
-                    editMode={editMode}
-                    onElementSelect={handleElementSelect}
-                    onElementDelete={handleElementDelete}
-                    onElementDuplicate={handleElementDuplicate}
-                    onElementMove={handleElementMove}
-                  />
-                </div>
+                     <div className="p-4">
+                       <EnhancedFullWidthMap
+                         selectedLayer={selectedLayer}
+                         onMarkerClick={handleMarkerClick}
+                         mode={mode}
+                         onMapClick={handleMapClick}
+                         drawingMode={drawingMode}
+                         onDrawingComplete={handleDrawingComplete}
+                         onMeasureComplete={handleMeasureComplete}
+                         editMode={editMode}
+                         onElementSelect={handleElementSelect}
+                         onElementDelete={handleElementDelete}
+                         onElementDuplicate={handleElementDuplicate}
+                         onElementMove={handleElementMove}
+                       />
+                     </div>
               </div>
             </section>
           </div>
         </div>
 
-        {/* Element Form Modal */}
-        <MapElementForm
-          isOpen={showElementForm}
-          onClose={handleElementFormClose}
-          onSave={handleElementFormSave}
-          elementType={elementFormData?.elementType}
-          coordinates={elementFormData?.coordinates}
-          elementData={elementFormData?.elementData}
-        />
+             {/* Element Form Modal */}
+             <MapElementForm
+               isOpen={showElementForm}
+               onClose={handleElementFormClose}
+               onSave={handleElementFormSave}
+               elementType={elementFormData?.elementType}
+               coordinates={elementFormData?.coordinates}
+               elementData={elementFormData?.elementData}
+             />
+
+             {/* Enhanced Location Form Modal */}
+             <EnhancedLocationForm
+               isOpen={showElementForm && elementFormData?.elementType === 'location'}
+               onClose={handleElementFormClose}
+               onSave={handleElementFormSave}
+               coordinates={elementFormData?.coordinates}
+               locationData={elementFormData?.elementData}
+             />
 
         {/* Measurement Instructions */}
         <MeasurementInstructions
@@ -725,4 +739,4 @@ const MapPage = () => {
   );
 };
 
-export default MapPage; 
+export default MapPage;

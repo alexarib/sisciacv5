@@ -20,6 +20,7 @@ use App\Http\Controllers\WorkerController;
 use App\Http\Controllers\MarketPriceController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\SalesChannelController;
+use App\Http\Controllers\LocationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -102,6 +103,16 @@ Route::apiResource('transactions', TransactionController::class);
 
 // Sales Channel Routes
 Route::apiResource('sales-channels', SalesChannelController::class);
+
+// Location Routes (Ubicaciones/Mapas)
+Route::apiResource('locations', LocationController::class);
+Route::get('locations/stats', [LocationController::class, 'stats']);
+Route::get('locations/geojson', [LocationController::class, 'geojson']);
+Route::post('locations/nearby', [LocationController::class, 'nearby']);
+Route::get('locations/by-producer/{producerId}', [LocationController::class, 'byProducer']);
+Route::get('locations/by-type/{type}', [LocationController::class, 'byType']);
+Route::get('locations/area-stats', [LocationController::class, 'areaStats']);
+Route::post('locations/clustering', [LocationController::class, 'clustering']);
 
 // Report Routes
 Route::apiResource('reports', ReportController::class);
