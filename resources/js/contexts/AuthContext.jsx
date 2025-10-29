@@ -76,6 +76,7 @@ export const AuthProvider = ({ children }) => {
 
       if (data?.success && data?.token) {
         localStorage.setItem('sisciac_token', data.token);
+        localStorage.setItem('sisciac_user', JSON.stringify(data.user));
         axios.defaults.headers.common['Authorization'] = `Bearer ${data.token}`;
         setUser(data.user);
         setIsAuthenticated(true);
