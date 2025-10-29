@@ -13,8 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Compiled Assets for Production -->
-    <link rel="stylesheet" href="{{ asset('build/assets/app--ypcBbvM.css') }}">
-    <link rel="stylesheet" href="{{ asset('build/assets/main-AAOzvmV9.css') }}">
+    @vite(['resources/css/app.css', 'resources/js/main.jsx'])
 </head>
 <body class="font-sans antialiased">
     <div id="app">
