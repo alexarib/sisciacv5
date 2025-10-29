@@ -34,8 +34,11 @@
                     </div>
                 </div>
                 <div class="flex items-center space-x-4">
-                    <a href="/login" class="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition-colors">
+                    <a href="/login" class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium transition-colors">
                         <i class="fas fa-sign-in-alt mr-2"></i>Iniciar Sesión
+                    </a>
+                    <a href="/register" class="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition-colors">
+                        <i class="fas fa-user-plus mr-2"></i>Registrarse
                     </a>
                 </div>
             </div>
@@ -219,9 +222,14 @@
             <p class="text-xl text-green-100 mb-8 max-w-2xl mx-auto">
                 Únete a la revolución agrícola digital y comienza a gestionar tus procesos de manera eficiente y moderna.
             </p>
-            <a href="/login" class="bg-white text-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors inline-flex items-center">
-                <i class="fas fa-arrow-right mr-2"></i>Comenzar Ahora
-            </a>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/login" class="bg-white text-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors inline-flex items-center">
+                    <i class="fas fa-arrow-right mr-2"></i>Comenzar Ahora
+                </a>
+                <a href="/register" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-green-600 transition-colors inline-flex items-center">
+                    <i class="fas fa-user-plus mr-2"></i>Registrarse
+                </a>
+            </div>
         </div>
     </section>
 
@@ -242,6 +250,7 @@
                     <h4 class="text-lg font-semibold mb-4">Enlaces Rápidos</h4>
                     <ul class="space-y-2">
                         <li><a href="/login" class="text-gray-400 hover:text-white transition-colors">Iniciar Sesión</a></li>
+                        <li><a href="/register" class="text-gray-400 hover:text-white transition-colors">Registrarse</a></li>
                         <li><a href="#features" class="text-gray-400 hover:text-white transition-colors">Funcionalidades</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Soporte</a></li>
                     </ul>

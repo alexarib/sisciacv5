@@ -17,6 +17,11 @@ Route::get('/login', function () {
     return view('welcome');
 });
 
+// Register
+Route::get('/register', function () {
+    return view('register');
+});
+
 // SPA Routes - All routes return the main view for React Router
 Route::get('/{any}', function () {
     return view('welcome');
