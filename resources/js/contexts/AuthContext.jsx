@@ -35,7 +35,7 @@ export const AuthProvider = ({ children }) => {
 
         axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
         
-        // Simulamos autenticación exitosa por ahora
+        // Intentar cargar usuario desde localStorage; si no existe, pedirlo al backend
         const userData = localStorage.getItem('sisciac_user');
         if (userData) {
           try {
@@ -45,12 +45,36 @@ export const AuthProvider = ({ children }) => {
           } catch (parseError) {
             console.error('Error parsing user data:', parseError);
             localStorage.removeItem('sisciac_user');
-            localStorage.removeItem('sisciac_token');
-            delete axios.defaults.headers.common['Authorization'];
           }
-        } else {
-          localStorage.removeItem('sisciac_token');
-          delete axios.defaults.headers.common['Authorization'];
+        }
+
+        // Si no hay usuario en localStorage pero sí hay token, consultamos /api/auth/me
+        if (!userData) {
+          (async () => {
+            try {
+              const { data } = await axios.get('/api/auth/me');
+              if (data?.success && data?.user) {
+                localStorage.setItem('sisciac_user', JSON.stringify(data.user));
+                setUser(data.user);
+                setIsAuthenticated(true);
+              } else {
+                // Token inválido: limpiar y forzar login
+                localStorage.removeItem('sisciac_token');
+                delete axios.defaults.headers.common['Authorization'];
+                setUser(null);
+                setIsAuthenticated(false);
+              }
+            } catch (err) {
+              console.error('Auth /me error:', err);
+              localStorage.removeItem('sisciac_token');
+              delete axios.defaults.headers.common['Authorization'];
+              setUser(null);
+              setIsAuthenticated(false);
+            } finally {
+              setLoading(false);
+            }
+          })();
+          return; // Evitar marcar loading=false antes de la llamada
         }
       } catch (error) {
         console.error('Auth check error:', error);
