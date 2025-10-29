@@ -126,6 +126,7 @@ const AdminDashboard = () => {
   };
 
   const menuItems = [
+    { icon: TrendingUp, label: 'Dashboard Avanzado', href: '/admin/dashboard', count: 0, highlight: true },
     { icon: Users, label: 'Productores', href: '/producers', count: stats.producers },
     { icon: Sprout, label: 'Cultivos', href: '/crops', count: stats.crops },
     { icon: MapPin, label: 'Mapa Interactivo', href: '/map', count: 0 },
@@ -175,7 +176,11 @@ const AdminDashboard = () => {
                 <Link
                   key={item.label}
                   to={item.href}
-                  className="group flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100"
+                  className={`group flex items-center px-3 py-2 text-sm font-medium rounded-md ${
+                    item.highlight 
+                      ? 'bg-blue-50 text-blue-700 hover:bg-blue-100' 
+                      : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
+                  }`}
                 >
                   <item.icon className="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500" />
                   {item.label}
@@ -229,7 +234,11 @@ const AdminDashboard = () => {
                   <Link
                     key={item.label}
                     to={item.href}
-                    className="inline-flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100"
+                    className={`inline-flex items-center px-3 py-2 text-sm font-medium rounded-md ${
+                      item.highlight 
+                        ? 'bg-blue-50 text-blue-700 hover:bg-blue-100' 
+                        : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
+                    }`}
                   >
                     <item.icon className="mr-2 h-4 w-4 text-gray-400" />
                     {item.label}
